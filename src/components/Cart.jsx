@@ -25,13 +25,14 @@ export default function Cart() {
             <h2>Your Cart</h2>
             <ul>
                 {cartCtx.items.map((item) => {
+                    console.log(item.name);
                     return <CartItem
                         key={item.id}
                         name={item.name}
                         quantity={item.quantity}
                         price={item.price}
-                        onIncrease={() => cartCtx.removeItem(item.id)}
-                        onDecrease={() => cartCtx.addItem(item)}
+                        onIncrease={() => cartCtx.addItem(item)}
+                        onDecrease={() => cartCtx.removeItem(item.id)}
                     />
                 })}
             </ul>
